@@ -13,14 +13,14 @@ enum Level {
 class QuizModel {
   final String title;
   final List<QuestionModel> questions;
-  final int questionAnsered;
+  final int questionAnswered;
   final String image;
   final Level level;
 
   QuizModel({
     required this.title,
     required this.questions,
-    this.questionAnsered = 0,
+    this.questionAnswered = 0,
     required this.image,
     required this.level,
   });
@@ -29,7 +29,7 @@ class QuizModel {
     return <String, dynamic>{
       'title': title,
       'questions': questions.map((x) => x.toMap()).toList(),
-      'questionAnsered': questionAnsered,
+      'questionAnswered': questionAnswered,
       'image': image,
       'level': level.name,
     };
@@ -40,7 +40,7 @@ class QuizModel {
       title: map['title'] as String,
       questions: List<QuestionModel>.from(
           map['questions']?.map((x) => QuestionModel.fromMap(x))),
-      questionAnsered: map['questionAnsered'] as int,
+      questionAnswered: map['questionAnswered'] as int,
       image: map['image'] as String,
       level: Level.values.firstWhere((a) => a.name == map['level'] as String),
     );

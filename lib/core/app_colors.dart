@@ -6,9 +6,14 @@ class AppColors {
   static const Color black = Color(0xFF514766);
   static const Color grey = Color(0xFF6E6680);
   static const Color lightGrey = Color(0xFFA6A1B2);
+  static const Color heading = Color(0XFF514766);
+  static const Color body = Color(0XFF6E6680);
   static const Color border = Color(0xFFE1E1E6);
   static const Color chartSecondary = Color(0xFFE1E6E3);
   static const Color chartPrimary = darkGreen;
+
+  //Background
+  static const Color backgroundPrimary = Color(0XFFF5F5FA);
 
   //Greens
   static const Color lightGreen = Color(0xFFE1F5EC);
@@ -35,4 +40,7 @@ class AppColors {
   static const Color levelButtonTextMedio = darkGreen;
   static const Color levelButtonTextDificil = Color(0xFFE8891C);
   static const Color levelButtonTextPerito = darkRed;
+
+  //Overlay button
+  static const Color buttonOverlayColor = Color(0x36BAB5B5);
 }

@@ -1,10 +1,17 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:flutter/material.dart';
+
 import 'package:devquiz_flutter/core/app_colors.dart';
 import 'package:devquiz_flutter/core/app_text_styles.dart';
 import 'package:devquiz_flutter/home/widgets/chart/chart_widget.dart';
-import 'package:flutter/material.dart';
 
 class ScoreCardWidget extends StatelessWidget {
-  const ScoreCardWidget({super.key});
+  final double score;
+
+  const ScoreCardWidget({
+    super.key,
+    required this.score,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -26,9 +33,9 @@ class ScoreCardWidget extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          const Expanded(
+          Expanded(
             flex: 1,
-            child: ChartWidget(),
+            child: ChartWidget(score: score),
           ),
           Expanded(
             flex: 3,

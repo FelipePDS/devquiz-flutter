@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 
 class AppBarWidget extends PreferredSize {
   final UserModel user;
-
+  
   AppBarWidget({
     super.key,
     required this.user,
@@ -45,22 +45,23 @@ class AppBarWidget extends PreferredSize {
                         height: 58,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
-                          image: DecorationImage(
-                            image: NetworkImage(
-                                user.photoUrl),
+                          image: const DecorationImage(
+                            image: AssetImage("assets/images/avatar.jpg"),
                           ),
                         ),
                       ),
                     ],
                   ),
                 ),
-                const Align(
-                  alignment: Alignment(0.0, 1.25),
+                Align(
+                  alignment: const Alignment(0.0, 1.25),
                   child: Padding(
-                    padding: EdgeInsets.symmetric(
+                    padding: const EdgeInsets.symmetric(
                       horizontal: 20,
                     ),
-                    child: ScoreCardWidget(),
+                    child: ScoreCardWidget(
+                      score: user.score,
+                    ),
                   ),
                 ),
               ],

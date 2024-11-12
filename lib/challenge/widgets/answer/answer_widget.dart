@@ -4,85 +4,87 @@ import 'package:flutter/material.dart';
 
 class AnswerWidget extends StatelessWidget {
   final String title;
-  final bool isRight;
   final bool isSelected;
+
+  final VoidCallback ontTap;
 
   const AnswerWidget({
     super.key,
     required this.title,
-    this.isRight = false,
     this.isSelected = false,
+    required this.ontTap,
   });
 
-  Color get _selectedColorRight =>
-      isRight ? AppColors.darkGreen : AppColors.darkRed;
+  Color get _selectBorderColor =>
+      isSelected ? AppColors.lightGreen : AppColors.border;
+      
+  Color get _selectBackgroundColor =>
+      isSelected ? AppColors.darkGreen : AppColors.white;
 
-  Color get _selectedBorderRight =>
-      isRight ? AppColors.lightGreen : AppColors.lightRed;
+  Color get _cardBackgroundColor =>
+      isSelected ? AppColors.lightGreen : AppColors.white;
 
-  Color get _selectedColorCardRight =>
-      isRight ? AppColors.lightGreen : AppColors.lightRed;
+  Color get _cardBorderColor =>
+      isSelected ? AppColors.green : AppColors.border;
 
-  Color get _selectedBorderCardRight =>
-      isRight ? AppColors.green : AppColors.red;
-
-  TextStyle get _selectedTextStyleRight =>
-      isRight ? AppTextStyles.bodyDarkGreen : AppTextStyles.bodyDarkRed;
-
-  IconData get _selectedIconRight => isRight ? Icons.check : Icons.close;
+  TextStyle get _cardTextStyle =>
+      isSelected ? AppTextStyles.bodyDarkGreen : AppTextStyles.body;
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 16,
-        vertical: 4,
-      ),
-      child: Container(
+    return GestureDetector(
+      onTap: ontTap,
+      child: Padding(
         padding: const EdgeInsets.symmetric(
           horizontal: 16,
-          vertical: 20,
+          vertical: 4,
         ),
-        decoration: BoxDecoration(
-          color: isSelected ? _selectedColorCardRight : AppColors.white,
-          borderRadius: BorderRadius.circular(10),
-          border: Border.fromBorderSide(
-            BorderSide(
-              color: isSelected ? _selectedBorderCardRight : AppColors.border,
+        child: Container(
+          padding: const EdgeInsets.symmetric(
+            horizontal: 16,
+            vertical: 20,
+          ),
+          decoration: BoxDecoration(
+            color: _cardBackgroundColor,
+            borderRadius: BorderRadius.circular(10),
+            border: Border.fromBorderSide(
+              BorderSide(
+                color: _cardBorderColor,
+              ),
             ),
           ),
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Expanded(
-              child: Text(
-                title,
-                style:
-                    isSelected ? _selectedTextStyleRight : AppTextStyles.body,
-              ),
-            ),
-            Container(
-              decoration: BoxDecoration(
-                color: isSelected ? _selectedColorRight : AppColors.white,
-                borderRadius: BorderRadius.circular(100),
-                border: Border.fromBorderSide(
-                  BorderSide(
-                    color: isSelected ? _selectedBorderRight : AppColors.border,
-                  ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Expanded(
+                child: Text(
+                  title,
+                  style:
+                      _cardTextStyle,
                 ),
               ),
-              width: 24,
-              height: 24,
-              child: isSelected
-                  ? Icon(
-                      _selectedIconRight,
-                      size: 16,
-                      color: Colors.white,
-                    )
-                  : null,
-            ),
-          ],
+              Container(
+                decoration: BoxDecoration(
+                  color: _selectBackgroundColor,
+                  borderRadius: BorderRadius.circular(100),
+                  border: Border.fromBorderSide(
+                    BorderSide(
+                      color: _selectBorderColor,
+                    ),
+                  ),
+                ),
+                width: 24,
+                height: 24,
+                child: isSelected
+                      ? const Icon(
+                          Icons.check,
+                          color: AppColors.white,
+                          size: 16,
+                        )
+                      : null,
+              ),
+            ],
+          ),
         ),
       ),
     );

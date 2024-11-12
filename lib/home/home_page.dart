@@ -1,3 +1,4 @@
+import 'package:devquiz_flutter/challenge/challenge_page.dart';
 import 'package:devquiz_flutter/core/app_colors.dart';
 import 'package:devquiz_flutter/home/home_controller.dart';
 import 'package:devquiz_flutter/home/home_state.dart';
@@ -29,7 +30,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    if (controller.state != HomeState.success && controller.quizList == null) {
+    if (controller.state != HomeState.success) {
       return const Scaffold(
         body: Center(
           child: CircularProgressIndicator(
@@ -42,6 +43,7 @@ class _HomePageState extends State<HomePage> {
     }
 
     return Scaffold(
+      backgroundColor: AppColors.backgroundPrimary,
       appBar: AppBarWidget(
         user: controller.user!,
       ),
@@ -50,6 +52,7 @@ class _HomePageState extends State<HomePage> {
           top: 40,
           left: 20,
           right: 20,
+          bottom: 20,
         ),
         child: Column(
           children: [
@@ -80,12 +83,23 @@ class _HomePageState extends State<HomePage> {
                 crossAxisCount: 2,
                 children: controller.quizList!
                     .map(
-                      (e) => QuizCardWidget(
-                        title: e.title,
+                      (quiz) => QuizCardWidget(
+                        title: quiz.title,
                         completed:
-                            "${e.questionAnsered} de ${e.questions.length}",
-                        percentage: e.questionAnsered / e.questions.length,
-                        image: e.image,
+                            "${quiz.questionAnswered} de ${quiz.questions.length}",
+                        percentage:
+                            quiz.questionAnswered / quiz.questions.length,
+                        image: quiz.image,
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => ChallengePage(
+                                quiz: quiz,
+                              ),
+                            ),
+                          );
+                        },
                       ),
                     )
                     .toList(),

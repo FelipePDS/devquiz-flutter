@@ -3,12 +3,12 @@ import 'dart:convert';
 class UserModel {
   final String name;
   final String photoUrl;
-  final int score;
+  final double score;
 
   UserModel({
     required this.name,
     required this.photoUrl,
-    this.score = 0,
+    this.score = 0.0,
   });
 
   Map<String, dynamic> toMap() {
@@ -23,7 +23,7 @@ class UserModel {
     return UserModel(
       name: map['name'],
       photoUrl: map['photoUrl'],
-      score: map['score'] ?? 0,
+      score: map['score'] ?? 0.0,
     );
   }
 

@@ -67,7 +67,7 @@ class _ChartWidgetState extends State<ChartWidget>
             ),
             Center(
               child: Text(
-                "${(widget.score * 100).toStringAsFixed(0)}%",
+                "${(_animation.value * 100).toStringAsFixed(0)}%",
                 style: AppTextStyles.heading,
               ),
             ),

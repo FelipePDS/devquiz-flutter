@@ -45,7 +45,7 @@ class _ProgressIndicatorWidgetState extends State<ProgressIndicatorWidget>
     return AnimatedBuilder(
       animation: _animation,
       builder: (context, _) => LinearProgressIndicator(
-        value: _animation.value,
+        value: widget.value,
         backgroundColor: AppColors.chartSecondary,
         valueColor: const AlwaysStoppedAnimation(
           AppColors.chartPrimary,

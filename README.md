@@ -12,8 +12,8 @@
 
 <p align="center">
     <a href="https://github.com/FelipePDS/devquiz-flutter/blob/main/LICENSE"><img src="https://img.shields.io/github/license/FelipePDS/devquiz-flutter?style=for-the-badge&color=8257e5"></a> 
-    <img src="https://img.shields.io/github/last-commit/FelipePDS/devquiz-flutter?style=for-the-badge&color=8257e5"><br>
-    <img src="https://img.shields.io/static/v1?label=flutter&message=v3.24.3&color=8257e5&style=for-the-badge&logo=flutter&logoColor=white"> 
+    <img src="https://img.shields.io/static/v1?label=flutter&message=v3.24.3&color=8257e5&style=for-the-badge&logo=flutter&logoColor=white"><br>
+    <img src="https://img.shields.io/static/v1?label=dart&message=v3.5.3&color=8257e5&style=for-the-badge&logo=dart&logoColor=white">
     <img src="https://img.shields.io/static/v1?label=Android SDK&message=v35.0.0&color=8257e5&style=for-the-badge&logo=android&logoColor=white"> 
     <img src="https://img.shields.io/static/v1?label=Android Studio&message=v2024.1&color=8257e5&style=for-the-badge&logo=android-studio&logoColor=white"> 
 </p>
@@ -33,10 +33,19 @@
 </p>
 
 <br>
+<h2 align="center" id="objective">🎯 Objetivo</h2>
+
+<p align="center">
+  App DevQuiz desenvolvido em flutter através da <a href="https://www.rocketseat.com.br/blog/artigos/post/nlw-domine-as-tecnologia-mais-quentes-do-mercado">NLW 5 - Flutter</a>, evento realizado pela <a href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://app.rocketseat.com.br/&ved=2ahUKEwiD19jFg-yJAxXGCbkGHf1JLGcQFnoECA0QAQ&usg=AOvVaw1iYSdqR-6ylunNEjQpEXRp">Rocketseat</a>.<br>
+  <b>"Dominando ferramenta flutter desenvolvendo nativamente."</b>
+</p>
+
+<br>
 <h2 align="center" id="technologies">💻 Tecnologias</h2>
 
 <p align="center">
   <a href="https://docs.flutter.dev/release/archive">Flutter (v3.24.3)</a> &bull; 
+  <a href="https://dart.dev/">Dart (v3.5.3)</a> &bull; 
   <a href="https://developer.android.com/ndk/downloads?hl=pt-br">Android Toolchain (SDK v35.0.0)</a><br>
   <a href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://developer.android.com/studio%3Fhl%3Dpt-br&ved=2ahUKEwjJzoC1-euJAxXGP7kGHXVHNF8QFnoECA4QAQ&usg=AOvVaw2F7JVLSq6b8x-frQNe8rB7">Android Studio (v2024.1)</a> &bull;
   <a href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://code.visualstudio.com/download&ved=2ahUKEwjAmNK7-euJAxXnHrkGHSLyJpkQFnoECA0QAQ&usg=AOvVaw11fc5fOXYIyxQh75jYLjXg">VS Code (v17.11.5)</a>

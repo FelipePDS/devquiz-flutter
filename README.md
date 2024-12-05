@@ -3,7 +3,7 @@
 </h1>
 
 <p align="center">
-  Aplicativo DevQuiz desenvolvido em Flutter 🚀
+  Aplicativo DevQuiz desenvolvido em Flutter 🚀 #NLW-5
 </p>
 
 <p align="center">
@@ -108,4 +108,4 @@ $ flutter run
 <br>
 <h2 align="center" id="license">:page_with_curl: Licença</h2>
 
-<p align="center"><a href="https://github.com/FelipePDS/unit-tests-dotnet/blob/main/LICENSE">MIT License</a> &nbsp;&bull;&nbsp; &copy; FelipePDS</p>
+<p align="center"><a href="https://github.com/FelipePDS/devquiz-flutter/blob/main/LICENSE">MIT License</a> &nbsp;&bull;&nbsp; &copy; FelipePDS</p>
